@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4</title>
+    <script src="assets/js/form_handler_tugas3.js"></script>
+</head>
+<body>
+    <section class="card form-section">
+        <h2>Tambah Produk Baru</h2>
+        
+        <form id="productForm" novalidate>
+            <div class="form-group">
+                <label for="name">Nama Produk:</label>
+                <input type="text" id="name" required placeholder="Contoh: Tahu kocek original">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Kategori Produk:</label>
+                <select id="category" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Minuman">Minuman</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Harga (Rp):</label>
+                <input type="number" id="price" required min="1000" placeholder="Contoh: 15000">
+            </div>
+
+            <div class="form-group">
+                <label for="stock">Jumlah Stok:</label>
+                <input type="number" id="stock" required min="0" placeholder="Contoh: 30">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Simpan ke Mock Data</button>
+        </form>
+ >
+        <div id="feedbackMessage" style="display: none; margin-top: 15px; font-weight: bold;"></div>
+
+        <hr>
+
+        <h2>Live Preview:</h2>
+
+        <p id="livePreviewText" style="font-style: italic; color: gray;"></p>
+
+    </section>
+</body>
+</html>
