@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style6.css">
+    <script src="assets/js/form_handler6.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Tahu Kocek Raja</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="katalogcard.html">Katalog Produk</a></li>
+        </ul>
+    </nav>
+
+
+    <div style="display: flex; gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap;">
+        
+    
+        <section class="card" style="flex: 1; min-width: 300px;">
+            <h2 id="formTitle">Tambah Produk Baru</h2>
+            <form id="productForm">
+
+                <input type="hidden" id="editModeId" value="">
+                
+                <div class="form-group">
+                    <label for="name">Nama Produk:</label>
+                    <input type="text" id="name" required placeholder="Contoh: Tahu kocek original">
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Kategori:</label>
+                    <select id="category" required>
+                        <option value="">Pilih Kategori</option>
+                        <option value="Makanan">Makanan</option>
+                        <option value="Minuman">Minuman</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Harga (Rp):</label>
+                    <input type="number" id="price" required min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="stock">Jumlah Stok:</label>
+                    <input type="number" id="stock" required min="0">
+                </div>
+
+                <button type="submit" id="btnSubmit" class="btn btn-primary">Simpan Produk</button>
+                <button type="button" id="btnCancelEdit" class="btn btn-delete" style="display: none; margin-top: 10px; width: 100%;" onclick="batalEdit()">Batal Edit</button>
+            </form>
+
+            <div id="feedbackMessage" style="display: none; margin-top: 15px; font-weight: bold; text-align: center;"></div>
+        </section>
+
+        <section class="card" style="flex: 1; min-width: 300px;">
+            <h2>Live Preview</h2>
+            <div style="padding: 30px 20px; border: 2px dashed #d4a5a5; background-color: #fdfbfb; text-align: center; border-radius: 10px;">
+                <p id="livePreviewText" style="font-size: 1.2rem; font-weight: bold; color: #9c6d70; font-style: italic;">
+                    (Ketik di form untuk melihat preview...)
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div style="padding: 0 20px 20px 20px; max-width: 1200px; margin: 0 auto;">
+        <section class="card">
+            <h2>Daftar Produk</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Kategori</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
